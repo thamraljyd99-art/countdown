@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>العد التنازلي</title>
+
+<style>
+body{
+    font-family: Tahoma, Arial;
+    background:#111;
+    color:white;
+    text-align:center;
+    padding-top:80px;
+}
+h1{
+    font-size:40px;
+}
+#countdown{
+    font-size:35px;
+    margin-top:30px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>العد التنازلي إلى 27 محرم 1448هـ</h1>
+
+<div id="countdown"></div>
+
+<script>
+const targetDate = new Date("2026-07-12T00:00:00+03:00");
+
+function updateCountdown() {
+
+const now = new Date();
+const diff = targetDate - now;
+
+const days = Math.floor(diff / (1000*60*60*24));
+const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+const seconds = Math.floor((diff % (1000*60)) / 1000);
+
+document.getElementById("countdown").innerHTML =
+days + " يوم " +
+hours + " ساعة " +
+minutes + " دقيقة " +
+seconds + " ثانية";
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+</script>
+
+</body>
+</html>
